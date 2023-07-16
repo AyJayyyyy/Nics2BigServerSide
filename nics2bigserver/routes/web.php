@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::get('/', function () {
+Route::get('/Admin', function () {
     return view('admin.dashboard');
 })->name('home');
 
