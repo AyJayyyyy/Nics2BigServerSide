@@ -22,6 +22,41 @@ Route::get('/Admin', function () {
     return view('admin.dashboard');
 })->name('home');
 
+Route::get('/Customer', function () {
+    return view('admin.customer');
+});
+
+Route::get('/Products', function () {
+    return view('admin.product');
+});
+Route::get('/Personnels', function () {
+    return view('admin.personnel');
+});
+
+Route::get('/Orders', function () {
+    return view('admin.order');
+});
+
+Route::get('/Delivery', function () {
+    return view('admin.delivery');
+});
+
+Route::get('/Notification', function () {
+    return view('admin.notification');
+});
+
+Route::get('/Report', function () {
+    return view('admin.report');
+});
+
+Route::get('/Analytics', function () {
+    return view('admin.analytics');
+});
+
+Route::get('/inuseadministrator', function () {
+    return view('admin.editadmin');
+});
+
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');

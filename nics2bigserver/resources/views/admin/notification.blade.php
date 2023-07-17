@@ -27,7 +27,7 @@
                   <p>Customers</p>
                 </a>
               </li>
-              <li class="active ">
+              <li>
                 <a href="/Products">
                   <i class="now-ui-icons shopping_tag-content"></i>
                   <p>Products</p>
@@ -51,7 +51,7 @@
                   <p>Delivery</p>
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="/Notification">
                   <i class="now-ui-icons ui-1_send"></i>
                   <p>Notifications</p>
@@ -81,7 +81,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> Products</h4>
+          <h4 class="card-title"> Notification</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
