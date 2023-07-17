@@ -86,18 +86,11 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>Name</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Salary</th>
-              </thead>
               <tbody>
                 <tr>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
+                  <a href="/Customer">
+                    <i class="now-ui-icons  users_circle-08" alt="Clickable Image"></i>
+                  </a>
                 </tr>
               </tbody>
             </table>
