@@ -89,7 +89,28 @@
               <tbody>
                 <tr>
                   <a href="/Customer">
-                    <i class="now-ui-icons  users_circle-08" alt="Clickable Image"></i>
+                    <img src="/images/CustomerLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Products">
+                    <img src="/images/ProductLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Personnels">
+                    <img src="/images/PersonnelsLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Orders">
+                    <img src="/images/OrdersLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Delivery">
+                    <img src="/images/DeliveryLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Notification">
+                    <img src="/images/NotificationLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Report">
+                    <img src="/images/ReportLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
+                  </a>
+                  <a href="/Analytics">
+                    <img src="/images/AnalyticsLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
                   </a>
                 </tr>
               </tbody>
