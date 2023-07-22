@@ -81,40 +81,41 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> Customers</h4>
-          <a href="/AddCustomer">
-          <button type="button" class="btn btn-primary btn-lg btn-block">+ADD</button>
-          </a>
+          <h4 class="card-title">Fill the Details</h4>
         </div>
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class=" text-primary">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Contact Information</th>
-                <th>Address</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Order History</th>
-                <th>Actions</th>
-              </thead>
-              <tbody>
-                @foreach ($data as $costu)    
-                  <tr>
-                    <td>{{$costu->id}}</td>
-                    <td>{{$costu->first_name}}</td>
-                    <td>{{$costu->contact_information}}</td>
-                    <td>{{$costu->address}}</td>
-                    <td><{{$costu->email}}</td>
-                    <td>{{$costu->password}}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                @endforeach
-              </tbody>
-            </table>
-          </div>
+            <form>
+                {{csrf_field() }}
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">First Name</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="ex. Juan">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Last Name</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="ex. Sebastian">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Full Address">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Contact No.</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="ex. 09164681183">
+                  </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+              </form>
         </div>
       </div>
     </div>

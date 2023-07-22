@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthManager;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,13 @@ Route::get('/Analytics', function () {
 Route::get('/inuseadministrator', function () {
     return view('admin.editadmin');
 });
+
+Route::get('/AddCustomer', function () {
+    return view('admin.AddCustomer');
+});
+
+Route::get('customer-list',[CustomerController::class, 'index']);
+
 
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
