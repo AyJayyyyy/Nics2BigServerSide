@@ -23,9 +23,9 @@ Route::get('/Admin', function () {
     return view('admin.dashboard');
 })->name('home');
 
-Route::get('/Customer', function () {
-    return view('admin.customer');
-});
+// I connected it to the customer controller, 
+// instead of just returning of the view
+Route::get('/Customer', [CustomerController::class, 'index']);
 
 Route::get('/Products', function () {
     return view('admin.product');
