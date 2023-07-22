@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('contact_information');
             $table->string('address');
-            $table->string('payment_information');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->text('order_history')->nullable();
             $table->timestamps();

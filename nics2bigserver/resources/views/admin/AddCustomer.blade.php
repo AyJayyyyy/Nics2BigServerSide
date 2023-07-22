@@ -84,37 +84,78 @@
           <h4 class="card-title">Fill the Details</h4>
         </div>
         <div class="card-body">
-            <form>
+            
+          @if (Session::has('success'))
+          <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+          </div>  
+          @endif
+          <form method="post" action="{{url('/AddCustomer')}}">
                 {{csrf_field() }}
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">First Name</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="ex. Juan">
+                    <label for="inputFirstname">First Name</label>
+                    <input type="text" class="form-control" name="first_name" placeholder="ex. Juan" value="{{old('first_name')}}">
+                    @error('first_name')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Last Name</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="ex. Sebastian">
+                    <label for="inputLastname">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" placeholder="ex. Sebastian" value="{{old('last_name')}}">
+                    @error('last_name')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Full Address">
+                  <input type="text" class="form-control" name="address" placeholder="Full Address" value="{{old('address')}}">
+                  @error('address')
+                    <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                    </div> 
+                  @enderror
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Contact No.</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="ex. 09164681183">
-                  </div>
+                    <label for="inputContact">Contact No.</label>
+                    <input type="text" class="form-control" name="contact_information" placeholder="ex. 09164681183" value="{{old('contact_information')}}">
+                    @error('contact_information')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
+                </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
+                    @error('email')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    @error('password')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                <div>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+                <div>
+                  <a href="{{url('/Customer')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>
+                </div>
               </form>
         </div>
       </div>

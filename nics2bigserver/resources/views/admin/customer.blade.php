@@ -82,11 +82,16 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title"> Customers</h4>
-          <a href="/AddCustomer">
+          <a href="{{url('/AddCustomer')}}">
           <button type="button" class="btn btn-primary btn-lg btn-block">+ADD</button>
           </a>
         </div>
         <div class="card-body">
+          @if (Session::has('success'))
+          <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+          </div>  
+          @endif
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
@@ -103,13 +108,17 @@
                 @foreach ($data as $costu)    
                   <tr>
                     <td>{{$costu->id}}</td>
-                    <td>{{$costu->first_name}}</td>
+                    <td>{{$costu->first_name}} {{$costu->last_name}}</td>
                     <td>{{$costu->contact_information}}</td>
                     <td>{{$costu->address}}</td>
-                    <td><{{$costu->email}}</td>
+                    <td>{{$costu->email}}</td>
                     <td>{{$costu->password}}</td>
                     <td></td>
-                    <td></td>
+                    <td>
+                      <a href="/UpdateCustomer">
+                        <button type="button" class="btn btn-primary btn-lg">Edit</button>
+                        </a>
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

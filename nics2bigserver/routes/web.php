@@ -26,6 +26,8 @@ Route::get('/Admin', function () {
 // I connected it to the customer controller, 
 // instead of just returning of the view
 Route::get('/Customer', [CustomerController::class, 'index']);
+Route::get('/AddCustomer', [CustomerController::class, 'addCustomer']);
+Route::post('/AddCustomer', [CustomerController::class, 'saveCustomer']);
 
 Route::get('/Products', function () {
     return view('admin.product');
@@ -58,11 +60,8 @@ Route::get('/inuseadministrator', function () {
     return view('admin.editadmin');
 });
 
-Route::get('/AddCustomer', function () {
-    return view('admin.AddCustomer');
-});
 
-Route::get('customer-list',[CustomerController::class, 'index']);
+
 
 
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
