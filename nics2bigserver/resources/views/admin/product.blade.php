@@ -82,23 +82,40 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title"> Products</h4>
+          <a href="{{url('#')}}">
+            <button type="button" class="btn btn-info btn-lg btn-block">+ADD</button>
+            </a>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>Name</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Salary</th>
+              <thead class="text-center text-primary">
+                <th>ID</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+                <th>Capital</th>
+                <th>Product Availability</th>
+                <th>Action</th>
               </thead>
-              <tbody>
+              <tbody class="text-center">
+                @foreach ($data as $prod)
                 <tr>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
+                  <td>{{$prod->id}}</td>
+                  <td>{{$prod->product_image}}</td>
+                  <td>{{$prod->product_name}}</td>
+                  <td>{{$prod->product_description}}</td>
+                  <td>₱ {{$prod->product_price}}</td>
+                  <td>₱ {{$prod->capital_income}}</td>
+                  <td>{{$prod->availability}}</td>
+                  <td>
+                    <a href="#">
+                      <button type="button" class="btn btn-success btn-lg">Update</button>
+                      </a>
+                  </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

@@ -28,7 +28,7 @@
               </a>
             </li>
             <li>
-              <a href="/Products">
+              <a href="/Product">
                 <i class="now-ui-icons shopping_tag-content"></i>
                 <p>Products</p>
               </a>
@@ -152,7 +152,7 @@
                   </div>
                 </div>
                 <div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
+                  <button type="submit" class="btn btn-success btn-lg btn-block">Update</button>
                 </div>
                 <div>
                   <a href="{{url('/Customer')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>

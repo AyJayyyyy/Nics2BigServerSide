@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 
@@ -31,9 +32,8 @@ Route::post('/AddCustomer', [CustomerController::class, 'saveCustomer']);
 Route::get('/EditCustomer/{id}', [CustomerController::class, 'editCustomer']);
 Route::post('/UpdateCustomer', [CustomerController::class, 'updateCustomer']);
 
-Route::get('/Products', function () {
-    return view('admin.product');
-});
+Route::get('/Product', [ProductController::class, 'index']);
+
 Route::get('/Personnels', function () {
     return view('admin.personnel');
 });

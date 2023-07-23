@@ -28,7 +28,7 @@
               </a>
             </li>
             <li>
-              <a href="/Products">
+              <a href="/Product">
                 <i class="now-ui-icons shopping_tag-content"></i>
                 <p>Products</p>
               </a>
@@ -91,7 +91,7 @@
                   <a href="/Customer">
                     <img src="/images/CustomerLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
                   </a>
-                  <a href="/Products">
+                  <a href="/Product">
                     <img src="/images/ProductLogo.jpg" alt="Clickable Image" style="width: 225px; height: auto;">
                   </a>
                   <a href="/Personnels">

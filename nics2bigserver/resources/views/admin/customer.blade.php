@@ -28,7 +28,7 @@
               </a>
             </li>
             <li>
-              <a href="/Products">
+              <a href="/Product">
                 <i class="now-ui-icons shopping_tag-content"></i>
                 <p>Products</p>
               </a>
@@ -83,13 +83,13 @@
         <div class="card-header">
           <h4 class="card-title"> Customers</h4>
           <a href="{{url('/AddCustomer')}}">
-          <button type="button" class="btn btn-primary btn-lg btn-block">+ADD</button>
+          <button type="button" class="btn btn-info btn-lg btn-block">+ADD</button>
           </a>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
+              <thead class="text-center text-primary">
                 <th>ID</th>
                 <th>Name</th>
                 <th>Contact Information</th>
@@ -99,7 +99,7 @@
                 <th>Order History</th>
                 <th>Actions</th>
               </thead>
-              <tbody>
+              <tbody class="text-center">
                 @foreach ($data as $costu)    
                   <tr>
                     <td>{{$costu->id}}</td>
@@ -111,7 +111,7 @@
                     <td></td>
                     <td>
                       <a href="{{url('EditCustomer/'.$costu->id)}}">
-                        <button type="button" class="btn btn-primary btn-lg">Edit</button>
+                        <button type="button" class="btn btn-success btn-lg">Update</button>
                         </a>
                     </td>
                   </tr>

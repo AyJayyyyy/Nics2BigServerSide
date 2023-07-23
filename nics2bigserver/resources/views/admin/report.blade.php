@@ -28,7 +28,7 @@
                 </a>
               </li>
               <li>
-                <a href="/Products">
+                <a href="/Product">
                   <i class="now-ui-icons shopping_tag-content"></i>
                   <p>Products</p>
                 </a>
