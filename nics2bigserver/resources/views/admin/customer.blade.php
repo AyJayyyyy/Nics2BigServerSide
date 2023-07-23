@@ -87,11 +87,6 @@
           </a>
         </div>
         <div class="card-body">
-          @if (Session::has('success'))
-          <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-          </div>  
-          @endif
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
@@ -115,7 +110,7 @@
                     <td>{{$costu->password}}</td>
                     <td></td>
                     <td>
-                      <a href="/UpdateCustomer">
+                      <a href="{{url('EditCustomer/'.$costu->id)}}">
                         <button type="button" class="btn btn-primary btn-lg">Edit</button>
                         </a>
                     </td>

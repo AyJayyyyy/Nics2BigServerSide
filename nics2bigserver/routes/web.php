@@ -28,6 +28,8 @@ Route::get('/Admin', function () {
 Route::get('/Customer', [CustomerController::class, 'index']);
 Route::get('/AddCustomer', [CustomerController::class, 'addCustomer']);
 Route::post('/AddCustomer', [CustomerController::class, 'saveCustomer']);
+Route::get('/EditCustomer/{id}', [CustomerController::class, 'editCustomer']);
+Route::post('/UpdateCustomer', [CustomerController::class, 'updateCustomer']);
 
 Route::get('/Products', function () {
     return view('admin.product');
