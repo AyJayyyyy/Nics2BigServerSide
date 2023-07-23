@@ -82,7 +82,7 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title"> Products</h4>
-          <a href="{{url('#')}}">
+          <a href="{{url('/AddProduct')}}">
             <button type="button" class="btn btn-info btn-lg btn-block">+ADD</button>
             </a>
         </div>

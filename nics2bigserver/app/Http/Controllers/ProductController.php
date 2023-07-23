@@ -11,4 +11,7 @@ class ProductController extends Controller
         $data = Product::get();
         return view('admin.product', compact('data'));
     }
+    public function addProduct() {
+        return view('admin.AddProduct');
+    }
 }

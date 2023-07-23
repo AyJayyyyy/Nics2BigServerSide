@@ -33,6 +33,7 @@ Route::get('/EditCustomer/{id}', [CustomerController::class, 'editCustomer']);
 Route::post('/UpdateCustomer', [CustomerController::class, 'updateCustomer']);
 
 Route::get('/Product', [ProductController::class, 'index']);
+Route::get('/AddProduct', [ProductController::class, 'addProduct']);
 
 Route::get('/Personnels', function () {
     return view('admin.personnel');
