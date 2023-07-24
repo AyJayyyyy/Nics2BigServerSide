@@ -21,13 +21,13 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="active ">
+            <li>
               <a href="/Customer">
                 <i class="now-ui-icons users_circle-08"></i>
-                <p>Product</p>
+                <p>Customers</p>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="/Product">
                 <i class="now-ui-icons shopping_tag-content"></i>
                 <p>Products</p>
@@ -90,7 +90,7 @@
             {{ Session::get('success') }}
           </div>  
           @endif
-          <form method="post" action="{{url('/AddCustomer')}}">
+          <form method="post" action="{{url('/saveProduct')}}" enctype="multipart/form-data">
                 {{csrf_field() }}
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -122,46 +122,32 @@
                   @enderror
                 </div>
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputA">Availability</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="availability" value="{{old('availability')}}">
-                      <label class="form-check-label" for="inlineRadio1">Available</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="availability" id="inlineRadio2" value="{{old('availability')}}">
-                      <label class="form-check-label" for="inlineRadio2">Out of Stock</label>
-                    </div>
-                    @error('availability')
-                      <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                      </div> 
-                    @enderror
-                  </div>
+                  
                   <div class="form-group col-md-6">
                     <label for="inputCapital">Capital</label>
-                    <input type="text" class="form-control" name="capital_income" placeholder="ex. ₱200">
+                    <input type="text" class="form-control" name="capital_income" placeholder="ex. ₱200" value="{{old('capital_income')}}">
                     @error('capital_income')
                       <div class="alert alert-danger" role="alert">
                         {{$message}}
                       </div> 
                     @enderror
                   </div>
+                  <div class="form-group">
+                    <label for="inputContact">Choose an image file</label>
+                    <input type="file" class="form-control-file" name="product_image" value="{{old('product_image')}}">
+                    <button type="file" class="btn btn-info btn-sm btn-block ">Choose image</button>
+                    @error('product_image')
+                      <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div> 
+                    @enderror
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputContact">Choose an image file</label>
-                  <input type="file" class="form-control-file" name="product_image" value="{{old('product_image')}}">
-                  @error('product_image')
-                    <div class="alert alert-danger" role="alert">
-                      {{$message}}
-                    </div> 
-                  @enderror
-              </div>
                 <div>
                   <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
                 </div>
                 <div>
-                  <a href="{{url('/Customer')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>
+                  <a href="{{url('/Product')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>
                 </div>
               </form>
         </div>

@@ -73,6 +73,6 @@ class CustomerController extends Controller
             'email' => $email,
             'password' => $password,
         ]);
-        return redirect()->back()->with('success', 'Customer Added Successfully'); 
+        return redirect()->back()->with('success', 'Customer Updated Successfully'); 
     }
 } 

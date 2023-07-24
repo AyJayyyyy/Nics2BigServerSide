@@ -28,12 +28,15 @@ Route::get('/Admin', function () {
 // instead of just returning of the view
 Route::get('/Customer', [CustomerController::class, 'index']);
 Route::get('/AddCustomer', [CustomerController::class, 'addCustomer']);
-Route::post('/AddCustomer', [CustomerController::class, 'saveCustomer']);
+Route::post('/saveCustomer', [CustomerController::class, 'saveCustomer']);
 Route::get('/EditCustomer/{id}', [CustomerController::class, 'editCustomer']);
 Route::post('/UpdateCustomer', [CustomerController::class, 'updateCustomer']);
 
 Route::get('/Product', [ProductController::class, 'index']);
 Route::get('/AddProduct', [ProductController::class, 'addProduct']);
+Route::post('/saveProduct', [ProductController::class, 'saveProduct']);
+Route::get('/EditProduct/{id}', [ProductController::class, 'editProduct']);
+Route::post('/UpdateProduct', [ProductController::class, 'updateProduct']);
 
 Route::get('/Personnels', function () {
     return view('admin.personnel');

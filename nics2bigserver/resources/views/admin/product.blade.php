@@ -103,14 +103,14 @@
                 @foreach ($data as $prod)
                 <tr>
                   <td>{{$prod->id}}</td>
-                  <td>{{$prod->product_image}}</td>
+                  <td><img src="{{ asset('storage/' . $prod->product_image)}}" alt=""/></td>
                   <td>{{$prod->product_name}}</td>
                   <td>{{$prod->product_description}}</td>
                   <td>₱ {{$prod->product_price}}</td>
                   <td>₱ {{$prod->capital_income}}</td>
-                  <td>{{$prod->availability}}</td>
+                  <td class="text-danger">{{ $prod-> availability == 1 ? 'Available' : 'Unavailable' }}</td>
                   <td>
-                    <a href="#">
+                    <a href="{{url('EditProduct/'.$prod->id)}}">
                       <button type="button" class="btn btn-success btn-lg">Update</button>
                       </a>
                   </td>

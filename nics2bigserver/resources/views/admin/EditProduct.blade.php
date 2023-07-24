@@ -21,13 +21,13 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="active ">
+            <li>
               <a href="/Customer">
                 <i class="now-ui-icons users_circle-08"></i>
                 <p>Customers</p>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="/Product">
                 <i class="now-ui-icons shopping_tag-content"></i>
                 <p>Products</p>
@@ -81,7 +81,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Fill the Details</h4>
+          <h4 class="card-title">Edit the Details</h4>
         </div>
         <div class="card-body">
             
@@ -90,22 +90,22 @@
             {{ Session::get('success') }}
           </div>  
           @endif
-          <form method="post" action="{{url('/saveCustomer')}}">
+          <form method="post" action="{{url('/UpdateProduct')}}" enctype="multipart/form-data">
                 {{csrf_field() }}
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputFirstname">First Name</label>
-                    <input type="text" class="form-control" name="first_name" placeholder="ex. Juan" value="{{old('first_name')}}">
-                    @error('first_name')
+                    <label for="inputProductname">Product Name</label>
+                    <input type="text" class="form-control" name="product_name" placeholder="ex. 1LT Bottle" value="{{$data->product_name}}">
+                    @error('product_name')
                       <div class="alert alert-danger" role="alert">
                         {{$message}}
                       </div> 
                     @enderror
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputLastname">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" placeholder="ex. Sebastian" value="{{old('last_name')}}">
-                    @error('last_name')
+                    <label for="inputPrice">Price</label>
+                    <input type="text" class="form-control" name="product_price" placeholder="ex. ₱200" value="{{$data->product_price}}">
+                    @error('product_price')
                       <div class="alert alert-danger" role="alert">
                         {{$message}}
                       </div> 
@@ -113,48 +113,56 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" name="address" placeholder="Full Address" value="{{old('address')}}">
-                  @error('address')
+                  <label for="inputPdescription">Product Description</label>
+                  <input type="text" class="form-control" name="product_description" placeholder="Details" value="{{$data->product_description}}">
+                  @error('product_description')
                     <div class="alert alert-danger" role="alert">
                     {{$message}}
                     </div> 
                   @enderror
                 </div>
                 <div class="form-group">
-                    <label for="inputContact">Contact No.</label>
-                    <input type="text" class="form-control" name="contact_information" placeholder="ex. 09164681183" value="{{old('contact_information')}}">
-                    @error('contact_information')
-                      <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                      </div> 
-                    @enderror
+                  <label for="inputCapital">Capital</label>
+                  <input type="text" class="form-control" name="capital_income" placeholder="ex. ₱200" value="{{$data->capital_income}}">
+                  @error('capital_income')
+                    <div class="alert alert-danger" role="alert">
+                      {{$message}}
+                    </div> 
+                  @enderror
                 </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
-                    @error('email')
-                      <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                      </div> 
-                    @enderror
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password">
-                    @error('password')
-                      <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                      </div> 
-                    @enderror
-                  </div>
+                <div class="form-group">
+                  <label for="inputContact">Choose an image file</label>
+                  <input type="file" class="form-control-file" name="product_image">
+                  <img src="{{ asset('storage/' . $data->product_image)}}" alt=""/>
+                  <button type="file" class="btn btn-info btn-sm btn-block ">Choose image</button>
+                  @error('product_image')
+                    <div class="alert alert-danger" role="alert">
+                      {{$message}}
+                    </div> 
+                  @enderror
                 </div>
+                  <div class="form-group">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-success btn-secondary {{ $data->availability ? 'active' : '' }}">
+                        <input type="radio" name="availability" id="option1" value="1" autocomplete="off" {{ $data->availability ? 'checked' : '' }}> Available
+                      </label>
+                      <label class="btn btn-danger btn-secondary {{ !$data->availability ? 'active' : '' }}">
+                        <input type="radio" name="availability" id="option2" value="0" autocomplete="off" {{ !$data->availability ? 'checked' : '' }}> Out of stock
+                      </label>
+                    </div>
+                      @error('availability')
+                          <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                          </div> 
+                      @enderror
+                    </div> 
+                  </div>
+                  
                 <div>
                   <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
                 </div>
                 <div>
-                  <a href="{{url('/Customer')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>
+                  <a href="{{url('/Product')}}" class="btn btn-danger btn-lg btn-block">Cancel</a>
                 </div>
               </form>
         </div>
