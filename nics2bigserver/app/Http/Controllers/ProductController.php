@@ -29,7 +29,6 @@ class ProductController extends Controller
         $productdescription= $request->product_description;
         $capitalincome= $request->capital_income;
         $productimage= $request->product_image;
-        $availability = $request->input('availability');
 
         $prod = new Product();
         $prod->product_name = $productname;
@@ -40,7 +39,6 @@ class ProductController extends Controller
             $productimage = $request->file('product_image')->store('storage', 'public');
             $prod->product_image = $productimage;
         }
-        $prod->availability = $availability;
         $prod->save();
 
         return redirect()->back()->with('success', 'Product Added Successfully');
@@ -77,5 +75,9 @@ class ProductController extends Controller
             'availability' => $availability,
         ]);
         return redirect()->back()->with('success', 'Product Updated Successfully');
+    }
+    public function showProduct() {
+        $data = Product::get();
+        return view('admin.ShowProduct', compact('data'));
     }
 }

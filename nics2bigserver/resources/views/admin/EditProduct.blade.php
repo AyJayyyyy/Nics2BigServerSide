@@ -94,6 +94,7 @@
                 {{csrf_field() }}
                 <div class="form-row">
                   <div class="form-group col-md-6">
+                    <input type="hidden" name="id" value="{{$data->id}}">
                     <label for="inputProductname">Product Name</label>
                     <input type="text" class="form-control" name="product_name" placeholder="ex. 1LT Bottle" value="{{$data->product_name}}">
                     @error('product_name')
