@@ -111,9 +111,8 @@
                   <td class="text-danger">{{ $prod-> availability == 1 ? 'Available' : 'Unavailable' }}</td>
                   <td>
                     <a href="{{url('EditProduct/'.$prod->id)}}">
-                      <button type="button" class="btn btn-success btn-sm">Update</button>
+                      <button type="button" class="btn btn-success btn-lg">Update</button>
                     </a>
-                    <a class="btn btn-info btn-sm" href="{{url('ShowProduct/')}}" role="button">Show product</a>
 
                   </td>
                 </tr>

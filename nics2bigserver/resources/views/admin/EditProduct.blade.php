@@ -93,8 +93,8 @@
           <form method="post" action="{{url('/UpdateProduct')}}" enctype="multipart/form-data">
                 {{csrf_field() }}
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="hidden" name="id" value="{{$data->id}}">
+                  <input type="hidden" name="id" value="{{$data->id}}">
+                  <div class="form-group col-md-6">    
                     <label for="inputProductname">Product Name</label>
                     <input type="text" class="form-control" name="product_name" placeholder="ex. 1LT Bottle" value="{{$data->product_name}}">
                     @error('product_name')
@@ -134,14 +134,18 @@
                 <div class="form-group">
                   <label for="inputContact">Choose an image file</label>
                   <input type="file" class="form-control-file" name="product_image">
-                  <img src="{{ asset('storage/' . $data->product_image)}}" alt=""/>
-                  <button type="file" class="btn btn-info btn-sm btn-block ">Choose image</button>
+                  @if($data->product_image)
+                      <img src="{{ asset('storage/' . $data->product_image) }}" alt=""/>
+                  @else
+                      <p>No image available.</p>
+                  @endif
+                  <button type="submit" class="btn btn-info btn-sm btn-block">Choose image</button>
                   @error('product_image')
-                    <div class="alert alert-danger" role="alert">
-                      {{$message}}
-                    </div> 
+                      <div class="alert alert-danger" role="alert">
+                          {{$message}}
+                      </div> 
                   @enderror
-                </div>
+              </div>
                   <div class="form-group">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-success btn-secondary {{ $data->availability ? 'active' : '' }}">
