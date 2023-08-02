@@ -78,35 +78,30 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title"> Personnels</h4>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class=" text-primary">
-                <th>Name</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Salary</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Personnels</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <a href="/Customer">
+                  <img src="/images/AdminLogo.jpg" alt="Clickable Image" style="width: 463px; height: 315px;">
+                </a>
+                <a href="/Product">
+                  <img src="/images/CourierLogo.jpg" alt="Clickable Image" style="width: 463px; height: 315px;">
+                </a>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
-
+</div>
 
 
 @endsection
