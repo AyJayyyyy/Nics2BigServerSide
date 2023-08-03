@@ -42,6 +42,8 @@ Route::get('/Personnels', function () {
     return view('admin.personnel');
 });
 
+
+
 Route::get('/Orders', function () {
     return view('admin.order');
 });

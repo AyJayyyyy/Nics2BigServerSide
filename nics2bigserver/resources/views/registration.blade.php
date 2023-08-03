@@ -10,9 +10,14 @@
               <label class="mt-5 form-label">Full Name</label>
               <input type="text" class="form-control" name="name" placeholder="Enter your Name">
             </div>
+
+            <div class="mb-3">
+                <label class="mt-5 form-label">Address</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter your Address">
+              </div>
             
             <div class="mb-3">
-                <label class="form-label">Email address</label>
+                <label class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter Email">
             </div>
             
