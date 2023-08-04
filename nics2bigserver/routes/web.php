@@ -65,7 +65,7 @@ Route::get('/Analytics', function () {
 });
 
 Route::get('/inuseadministrator', function () {
-    return view('admin.editadmin');
+    return view('admin.admin');
 });
 
 

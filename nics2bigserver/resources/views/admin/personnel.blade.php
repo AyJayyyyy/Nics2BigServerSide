@@ -88,7 +88,7 @@
           <table class="table">
             <tbody>
               <tr>
-                <a href="/Customer">
+                <a href="{{url('/inuseadministrator')}}">
                   <img src="/images/AdminLogo.jpg" alt="Clickable Image" style="width: 463px; height: 315px;">
                 </a>
                 <a href="/Product">

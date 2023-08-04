@@ -3,30 +3,39 @@
 @section('content')
     
   
-    <div class="container bg-black" style="--bs-bg-opacity: .30; width: 350px; height: 500px;">
-        <form action="{{route('registration.post')}}" method="POST" class="ms-auto me-auto mt-5 " style="width: 250px" >
+    <div class="container bg-black" style="--bs-bg-opacity: .30; width: 900px; height: 500px;">
+        <form action="{{route('registration.post')}}" method="POST" class=" mt-5 ms-2 " style="width: 850px" >
             @csrf
-            <div class="mb-3">
-              <label class="mt-5 form-label">Full Name</label>
-              <input type="text" class="form-control" name="name" placeholder="Enter your Name">
-            </div>
+            <h4 style="padding-top: 18px; padding-bottom: 2px;">Registration</h4>
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="mt-3 form-label">First Name</label>
+                    <input type="text" class="form-control" name="first_name" placeholder="Enter your First name">
+                </div>
+
+                <div class="col">
+                    <label class="mt-3 form-label">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" placeholder="Enter your Last name">
+                </div>
+            </div> 
 
             <div class="mb-3">
-                <label class="mt-5 form-label">Address</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter your Address">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" name="address" placeholder="Enter your Address">
               </div>
             
-            <div class="mb-3">
+            
+            <div class="form-group col-md-6">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter Email">
             </div>
             
-            <div class="mb-5">
-              <label class="form-label">Password</label>
+            <div class="form-group col-md-6">
+              <label class="form-label mt-3">Password</label>
               <input type="password" class="form-control" name="password" placeholder="Enter Password">
             </div>
            
-            <div class="d-grid gap-2">
+            <div class="mt-4 d-grid gap-2">
                 <button type="submit" class="btn btn-primary btn-lg">Register</button>
             </div>
 

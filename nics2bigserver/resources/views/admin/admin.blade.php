@@ -33,7 +33,7 @@
                   <p>Products</p>
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="/Personnels">
                   <i class="now-ui-icons sport_user-run"></i>
                   <p>Personnels</p>
