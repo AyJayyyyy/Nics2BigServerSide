@@ -86,19 +86,38 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>Name</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Salary</th>
-              </thead>
               <tbody>
-                <tr>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                </tr>
+                <div style="display: flex; align-items: center;">
+                  <!-- First column: Image -->
+                  <div style="flex: 1; margin-right: 20px;">
+                    <img src="/images/AdminLogoU.jpg" alt="Profile Image">
+                  </div>
+              
+                  <!-- Second column: Information -->
+                  @foreach ($data as $ad)
+                  <div style="flex: 2;">
+                    <!-- Row 1: First Name -->
+                    <div class="form-group col-md-6">
+                      <label for="inputFirstname">Name : </label>
+                      <input type="text" class="form-control" name="first_name" value="{{$ad->first_name}}, {{$ad->last_name}}" disabled>
+                    </div>
+              
+                    <!-- Row 3: Address -->
+                    <div class="form-group col-md-10">
+                      <label for="inputLastname">Address</label>
+                      <input type="text" class="form-control" name="first_name" value="{{$ad->address}}" disabled>
+                    </div>
+              
+                    <!-- Row 4: Email -->
+                    <div class="form-group col-md-6">
+                      <label for="inputLastname">Email</label>
+                      <input type="text" class="form-control" name="first_name" value="{{$ad->email}}" disabled>
+                    </div>
+              
+                    @endforeach
+
+                  </div>
+                </div>
               </tbody>
             </table>
           </div>

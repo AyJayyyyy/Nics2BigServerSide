@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Session;
 
 class AuthManager extends Controller
 {
+    public function index(){
+        $data = User::all();
+        
+        return view('admin.admin',compact('data'));
+    }
     function login(){
         return view('login');
     }

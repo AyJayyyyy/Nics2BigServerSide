@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('deliveries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
-            $table->unsignedBigInteger('delivery_personnel_id');
+            $table->unsignedBigInteger('delivery_personnels_id');
             $table->foreign('order_id')->references('id')->on('orders');
-            $table->foreign('delivery_personnel_id')->references('id')->on('delivery_personnel');
+            $table->foreign('delivery_personnels_id')->references('id')->on('delivery_personnels');
             $table->string('delivery_status');
             $table->timestamp('delivery_time')->nullable();
             $table->timestamps();

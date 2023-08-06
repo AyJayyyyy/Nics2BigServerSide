@@ -91,7 +91,7 @@
                 <a href="{{url('/inuseadministrator')}}">
                   <img src="/images/AdminLogo.jpg" alt="Clickable Image" style="width: 463px; height: 315px;">
                 </a>
-                <a href="/Product">
+                <a href="{{url('/Delivery_personnel')}}">
                   <img src="/images/CourierLogo.jpg" alt="Clickable Image" style="width: 463px; height: 315px;">
                 </a>
               </tr>

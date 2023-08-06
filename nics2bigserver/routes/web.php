@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DeliveryPersonnelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::get('/Personnels', function () {
     return view('admin.personnel');
 });
 
+Route::get('/Delivery_personnel', [DeliveryPersonnelController::class, 'index']);
+Route::get('/EditDelivery_personnel/{id}', [DeliveryPersonnelController::class, 'editDeliverypersonnel']);
+
 
 
 Route::get('/Orders', function () {
@@ -76,4 +80,5 @@ Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
 Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
+Route::get('/inuseadministrator', [AuthManager::class, 'index']);
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
