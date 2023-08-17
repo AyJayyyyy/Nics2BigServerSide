@@ -13,8 +13,10 @@ class DeliveryPersonnelController extends Controller
         
         return view('admin.courier',compact('data'));
     }
-    public function editDeliverypersonnel($id){
-        $data = DeliveryPersonnel::where('id', '=', $id)->first();
-        return $data;
+    
+  
+    public function editCourierpersonnel($id){
+        $data = DeliveryPersonnel::where('id','=',$id)->first();
+        return view('admin.EditCourier',compact('data'));
     }
 }

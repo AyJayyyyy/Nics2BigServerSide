@@ -44,7 +44,7 @@ Route::get('/Personnels', function () {
 });
 
 Route::get('/Delivery_personnel', [DeliveryPersonnelController::class, 'index']);
-Route::get('/EditDelivery_personnel/{id}', [DeliveryPersonnelController::class, 'editDeliverypersonnel']);
+Route::get('/EditCourier_personnel/{id}', [DeliveryPersonnelController::class, 'editCourierpersonnel']);
 
 
 

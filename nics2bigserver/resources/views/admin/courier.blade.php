@@ -105,7 +105,7 @@
                     <td>{{$cour->email}}</td>
                     <td>{{$cour->password}}</td>
                     <td>
-                      <a href="{{url('EditDelivery_personnel/'.$cour->id)}}">
+                      <a href="{{url('EditCourier_personnel/'.$cour->id)}}">
                         <button type="button" class="btn btn-success btn-lg">Update</button>
                       </a>
                     </td>
