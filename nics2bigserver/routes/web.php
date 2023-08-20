@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DeliveryPersonnelController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,9 +57,8 @@ Route::get('/Delivery', function () {
     return view('admin.delivery');
 });
 
-Route::get('/Notification', function () {
-    return view('admin.notification');
-});
+
+Route::get('/Notification', [NotificationController::class, 'sendsms']);
 
 Route::get('/Report', function () {
     return view('admin.report');
