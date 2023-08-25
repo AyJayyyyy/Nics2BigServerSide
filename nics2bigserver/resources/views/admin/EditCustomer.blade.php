@@ -85,11 +85,6 @@
         </div>
         <div class="card-body">
             
-          @if (Session::has('success'))
-          <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-          </div>  
-          @endif
           <form method="post" action="{{url('/UpdateCustomer')}}">
                 {{csrf_field() }}
                 <input type="hidden" name="id" value="{{$data->id}}">
@@ -162,12 +157,13 @@
       </div>
     </div>
   </div>
+  <x-flash-message />
 
 
 
 @endsection
 
 
-@section('scripts')
+{{-- @section('scripts')
 
-@endsection
+@endsection --}}

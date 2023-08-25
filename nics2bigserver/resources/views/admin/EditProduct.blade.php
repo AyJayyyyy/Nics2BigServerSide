@@ -85,11 +85,6 @@
         </div>
         <div class="card-body">
             
-          @if (Session::has('success'))
-          <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-          </div>  
-          @endif
           <form method="post" action="{{url('/UpdateProduct')}}" enctype="multipart/form-data">
                 {{csrf_field() }}
                 <div class="form-row">

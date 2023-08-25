@@ -41,7 +41,7 @@ class CustomerController extends Controller
         $costu->password = $password;
         $costu->save();
 
-        return redirect()->back()->with('success', 'Customer Added Successfully');
+        return redirect('/Customer')->with('success', 'Customer Added Successfully');
     }
 
     public function editCustomer($id) {
@@ -73,6 +73,6 @@ class CustomerController extends Controller
             'email' => $email,
             'password' => $password,
         ]);
-        return redirect()->back()->with('success', 'Customer Updated Successfully'); 
+        return redirect('/Customer')->with('success', 'Customer Updated Successfully'); 
     }
 } 

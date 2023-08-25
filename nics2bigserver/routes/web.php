@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DeliveryPersonnelController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,11 +49,9 @@ Route::get('/Personnels', function () {
 Route::get('/Delivery_personnel', [DeliveryPersonnelController::class, 'index']);
 Route::get('/EditCourier_personnel/{id}', [DeliveryPersonnelController::class, 'editCourierpersonnel']);
 
+Route::get('/Orders', [OrderController::class, 'index']);
 
-
-Route::get('/Orders', function () {
-    return view('admin.order');
-});
+ 
 
 Route::get('/Delivery', function () {
     return view('admin.delivery');

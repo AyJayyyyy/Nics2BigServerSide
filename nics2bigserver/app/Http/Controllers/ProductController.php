@@ -43,7 +43,7 @@ class ProductController extends Controller
         }
         $prod->save();
 
-        return redirect()->back()->with('success', 'Product Added Successfully');
+        return redirect('/Product')->with('success', 'Product Added Successfully');
 
     }
     public function editProduct($id) {
@@ -86,7 +86,7 @@ class ProductController extends Controller
         // Save the updated product
         $product->save();
     
-        return redirect()->back()->with('success', 'Product Updated Successfully');
+        return redirect('/Product')->with('success', 'Product Updated Successfully');
     }
 
 }

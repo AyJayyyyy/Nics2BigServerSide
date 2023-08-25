@@ -15,5 +15,11 @@ class Product extends Model
         'product_image', // Add 'product_image' to the fillable array
         // Other fillable fields
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'product_id');
+    }
+
 }
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->text('product_description');
             $table->decimal('product_price', 8, 2);
+            $table->integer('stocks');
             $table->boolean('availability')->default(true);
             $table->decimal('capital_income', 8, 2)->nullable();
             $table->string('product_image')->nullable();

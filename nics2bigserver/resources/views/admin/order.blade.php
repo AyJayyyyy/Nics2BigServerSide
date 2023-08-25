@@ -77,7 +77,7 @@
 
 @section('content')
 
-<div class="row">
+  <div class="row">
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
@@ -86,19 +86,34 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>Name</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Salary</th>
+              <thead class="text-center text-primary">
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Product ID</th>
+                <th>Order Date</th>
+                <th>Quantity</th>
+                <th>Total Cost</th>
+                <th>Actions</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                  <td>Dakota Rice</td>
-                </tr>
+                @foreach ($orders as $order)    
+                  <tr>
+                    <td>{{$order->id}}</td>
+                    <td>{{$order->customer->first_name}} {{$order->customer->last_name}}</td>
+                    <td><img src="{{ asset('storage/' . $order->product->product_image)}}" alt=""/></td>
+                    <td>{{$order->order_date}}</td>
+                    <td>{{$order->quantity}}</td>
+                    <td>{{$order->total_cost}}</td>
+                    <td>
+                      <a href="">
+                        <button type="button" class="btn btn-success btn-md">Accept</button>
+                      </a>
+                      <a href="">
+                        <button type="button" class="btn btn-danger btn-md">Decline</button>
+                      </a>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
